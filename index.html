@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mandelbrot Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="controls">
+      <div class="row">
+        <button id="resetBtn">Reset</button>
+        <button id="undoBtn">Undo</button>
+        <button id="saveBtn">Save View</button>
+        <label class="pan-toggle">
+          <input id="panMode" type="checkbox" /> Pan mode
+        </label>
+      </div>
+
+      <div class="row sliders">
+        <label>
+          Max Iterations
+          <input id="iterSlider" type="range" min="50" max="2000" step="10" value="500" />
+          <span id="iterValue">500</span>
+        </label>
+
+        <label>
+          Render Quality
+          <input id="qualitySlider" type="range" min="0.25" max="1" step="0.05" value="1" />
+          <span id="qualityValue">1.00x</span>
+        </label>
+
+        <label>
+          Palette
+          <select id="paletteSelect">
+            <option value="classic">Classic</option>
+            <option value="ocean">Ocean</option>
+            <option value="sunset">Sunset</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="row readouts">
+        <span id="centerReadout"></span>
+        <span id="zoomReadout"></span>
+        <span id="iterReadout"></span>
+        <span id="paletteReadout"></span>
+      </div>
+
+      <div class="row">
+        <span id="statusLine">Ready.</span>
+      </div>
+    </header>
+
+    <main class="canvas-wrap" id="canvasWrap">
+      <canvas id="fractalCanvas"></canvas>
+      <div id="selectionBox" class="selection-box hidden"></div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
