@@ -1,0 +1,104 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 25% 20%, #2a2d40, #10131f 55%);
+  color: #f5f7ff;
+}
+
+.app {
+  width: min(96vw, 980px);
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+}
+
+header p {
+  margin: 0.25rem 0 0;
+  color: #c6cee9;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+input[type="range"] {
+  width: 190px;
+}
+
+input[type="number"] {
+  width: 4.8rem;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.status {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.status p {
+  margin: 0;
+}
+
+#hint {
+  color: #b6bee3;
+  font-size: 0.92rem;
+}
+
+.canvas-wrap {
+  position: relative;
+  width: 900px;
+  max-width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Mandelbrot Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Interactive Mandelbrot Explorer</h1>
+      <p>Click to zoom in, Shift + click to zoom out, and drag to zoom to a selected area.</p>
+    </header>
+
+    <section class="controls" aria-label="Mandelbrot controls">
+      <label>
+        Max iterations
+        <input id="iterations" type="range" min="50" max="2000" step="10" value="400" />
+      </label>
+      <output id="iterationValue" for="iterations">400</output>
+
+      <label>
+        Zoom factor
+        <input id="zoomFactor" type="number" min="1.1" step="0.1" value="2" />
+      </label>
+
+      <button id="resetButton" type="button">Reset View</button>
+      <button id="renderButton" type="button">Re-render</button>
+    </section>
+
+    <section class="status" aria-live="polite">
+      <p id="viewInfo"></p>
+      <p id="hint">Tip: Drag a box on the canvas for precise zooming.</p>
+    </section>
+
+    <div class="canvas-wrap">
+      <canvas id="mandelbrot" width="900" height="600"></canvas>
+      <canvas id="overlay" width="900" height="600" aria-hidden="true"></canvas>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
