@@ -1,0 +1,102 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0f16;
+  --panel: #121826;
+  --text: #d6e2ff;
+  --muted: #9ca9c5;
+  --accent: #66d9ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.controls {
+  background: var(--panel);
+  border-bottom: 1px solid #24304d;
+  padding: 0.75rem 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+button,
+select,
+input[type="range"] {
+  cursor: pointer;
+}
+
+button {
+  background: #1e2a44;
+  color: var(--text);
+  border: 1px solid #304064;
+  border-radius: 6px;
+  padding: 0.38rem 0.7rem;
+}
+
+button:hover {
+  border-color: var(--accent);
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+}
+
+.sliders label {
+  min-width: 280px;
+}
+
+.readouts {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+#statusLine {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.canvas-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+#fractalCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.selection-box {
+  position: absolute;
+  border: 2px dashed #ffffffcc;
+  background: #8cc9ff22;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
